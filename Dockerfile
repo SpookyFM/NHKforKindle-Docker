@@ -31,7 +31,7 @@ RUN sed -i s/587/${SMTP_PORT}/g /usr/src/app/sendmail.py
 RUN sed -i s/"YOUR SMTP USER HERE"/${SMTP_USER}/g /usr/src/app/sendmail.py
 RUN sed -i s/"YOUR SMTP PASSWORD HERE"/${SMTP_PASSWORD}/g /usr/src/app/sendmail.py
 RUN sed -i s/"SENDER MAIL ADDRESS"/${MAIL_FROM}/g /usr/src/app/sendmail.py
-RUN sed -i s/"RECIPIENT MAIL ADDRESS"/${SMTP_TO}/g /usr/src/app/sendmail.py
+RUN sed -i s/"RECIPIENT MAIL ADDRESS"/${MAIL_TO}/g /usr/src/app/sendmail.py
 
 # Install cron
 RUN apt-get update && apt-get install -y cron
