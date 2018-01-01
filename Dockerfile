@@ -45,4 +45,4 @@ RUN chmod 0644 /etc/cron.d/nhk-cron
  
 # Run the command on container startup
 #CMD ["cron", "-f"]
-CMD kindle.sh
+CMD /usr/src/app/kindle.sh
