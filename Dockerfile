@@ -38,11 +38,13 @@ RUN apt-get update && apt-get install -y cron
 
 # Setup cron
 # Add crontab file in the cron directory
-ADD crontab /etc/cron.d/nhk-cron
+ADD crontab /etc/cron.d/nhk
  
 # Give execution rights on the cron job
-RUN chmod 0644 /etc/cron.d/nhk-cron
+RUN chmod 0600 /etc/cron.d/nhk
+
+# See https://stackoverflow.com/a/44990190
+RUN touch /etc/crontab /etc/cron.*/*
  
-# Run the command on container startup
-#CMD ["cron", "-f"]
-CMD /usr/src/app/kindle.sh
+# Start the cron job on startup
+CMD ["cron", "-f"]
