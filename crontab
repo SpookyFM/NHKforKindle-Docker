@@ -1,1 +1,1 @@
-0 12 * * * root /usr/src/app/kindle.sh
+0 12 * * * root cd /usr/src/app && ./kindle.sh
